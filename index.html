@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoidHack</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <script src="main.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+</head>
+<body onclick="ontextclick()" style="cursor: pointer;">
+    <div id="clicktext_container" style="width: auto; height: auto;" class="screen_center">
+        <h1 id="justclick_text">Just click...</h1>
+    </div>
+
+    <script>
+        function ontextclick() {
+            $("body").prop("onclick", "").prop("style", "cursor: cursor;");
+            $("body").fadeOut(500, () => {
+                $("body").load("pagecontent.html", () => {
+                    initializeVoidHackWebpage();
+                });
+            }).fadeIn(500);
+        }
+    </script>
+</body>
+</html>
